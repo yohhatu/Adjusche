@@ -1,0 +1,15 @@
+<h1>ログイン画面</h1>
+
+<%= form_for @user do |form| %>
+<ul>
+  <li><%= form.label :user_name, "ユーザー名" %><%= form.text_field :user_name %></li>
+  <li><%= form.label :user_pass, "パスワード" %><%= form.text_field :user_pass %></li>
+
+  <li><%= link_to "ログイン" %></li>
+
+</ul>
+<p>あいさつ<%= @hoge %></p>
+<% end %>
+
+
+
