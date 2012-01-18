@@ -5,7 +5,7 @@
   <li><%= form.label :user_name, "ユーザー名" %><%= form.text_field :user_name %></li>
   <li><%= form.label :user_pass, "パスワード" %><%= form.text_field :user_pass %></li>
 
-  <li><%= link_to "ログイン" %></li>
+  <li><%= link_to "ログイン" ,:action=>"new"   %></li>
 
 </ul>
 <p>あいさつ<%= @hoge %></p>
