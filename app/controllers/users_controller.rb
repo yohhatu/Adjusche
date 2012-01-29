@@ -30,17 +30,4 @@ class UsersController < ApplicationController
     @events = Event.where(:user_id => 1) 
   end
 
-  def new
-    #@login_user = User.where( params[ :user ] )
-    login_user = params[ :u ] 
-
-    begin
-      User.find_by_user_name_and_user_pass!("seit" , "seit") 
-    rescue ActiveRecord::RecordNotFound
-      redirect_to :back
-    end
-
-    @events = Event.where(:user_id => 1) 
-
-  end
 end
