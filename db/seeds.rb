@@ -13,20 +13,26 @@ passes = [
 event_names = [
   "焼き肉パーティー",
   "部門間飲み会",
-  "ゴルフコンペ"
+  "ゴルフコンペ",
+  "Ruby勉強会",
+  "RxT Study"
 ]
 
 event_user_ids = [
   1,
+  2,
   1,
+  3,
   1
 ]
 
 3.times do |n|
   User.create(:user_name => names[n], :user_pass => passes[n])
-  Event.create(:name => event_names[n], :user_id => event_user_ids[n])
 end
 
+5.times do |e|  
+  Event.create(:name => event_names[e], :user_id => event_user_ids[e])
+end
 
 
 # This file should contain all the record creation needed to seed the database with its default values.
