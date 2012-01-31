@@ -2,7 +2,7 @@ Adjusche::Application.routes.draw do
   root :to => "users#new"
   #resources :users 
   resources :users do 
-    put :login, :on => :member
+    get :login, :on => :member
     get :menu, :on => :member  
   end
 
