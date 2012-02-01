@@ -1,0 +1,30 @@
+ようこそ!
+</br>
+イベント一覧
+</br>
+<%= link_to "新規登録" %>
+
+<table>
+  <tr>
+    <td>
+       <p>イベント名</p>
+    <td>
+    <td>
+      <p>開催日時</p>
+    </td>
+    <td>
+    </td>
+  </tr>
+
+  <% @events.each do |event| %>
+    <tr>
+      <td>
+        <%= link_to event.name %>
+      </td>
+      <td>
+        <%= link_to "編集" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
