@@ -1,3 +1,4 @@
+# -*- encoding: UTF-8 -*-
 names = [
   "seit",
   "yohhatu",
