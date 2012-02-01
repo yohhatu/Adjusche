@@ -1,11 +1,10 @@
 Adjusche::Application.routes.draw do
-  root :to => "users#index"
+  root :to => "users#new"
   #resources :users 
   resources :users do 
-    put :login, :on => :member
-    get :menu, :on => :member
-  
- end
+    get :login, :on => :member
+    get :menu, :on => :member  
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
