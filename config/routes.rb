@@ -6,6 +6,8 @@ Adjusche::Application.routes.draw do
     get :menu, :on => :member  
   end
 
+  resources :events
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,12 @@
+<h1>イベント登録</h1>
+
+<%= form_for @event do |form| %>
+	<ul>
+		<li><%= form.label :name, "イベント名" %><%= form.text_field :name %></li>
+		<li><%= form.label :description, "説明" %><%= form.text_area :description %></li>
+		<li><%= form.submit "送信" %></li>
+	</ul>
+<% end %>
+<%= link_to "メニューへ戻る", :events %>
+<p>※TODO:作成ユーザIDのセット</p>
+

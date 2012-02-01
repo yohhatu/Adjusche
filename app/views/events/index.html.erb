@@ -1,0 +1,18 @@
+<h1>イベント一覧(仮)</h1>
+
+<table border="1">
+<tr>
+  <td>イベント名</td>
+  <td>作成ユーザID</td>
+  <td>説明</td>
+</tr>
+<% @events.each do |event| %>
+<tr>
+  <td><%= link_to event.name, event %></td>
+  <td><%= event.user_id %></td>
+  <td><%= event.description %></td>
+</tr>
+<% end %>
+</table>
+<br>
+<%= link_to "新規登録", [ :new, :event ] %>

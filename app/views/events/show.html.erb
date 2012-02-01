@@ -1,0 +1,20 @@
+<h1>イベント詳細: <%= @event.name %></h1>
+
+<table border="1">
+	<tr>
+		<td>イベント名</td>
+		<td><%= @event.name %></td>
+	</tr>
+	<tr>
+		<td>説明</td>
+		<td><%= @event.description %></td>
+	</tr>
+	<tr>
+		<td>作成ユーザID</td>
+		<td><%= @event.user_id %></td>
+	</tr>
+</table>
+<br>
+<br>
+<p><%= link_to "メニューへ", :events %></p>
+<p><%= link_to "新規登録", [ :new, :event ] %></p>
