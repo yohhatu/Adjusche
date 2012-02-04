@@ -34,6 +34,8 @@ class UsersController < ApplicationController
     @events = Event.where(:user_id => luid )
 
     #@events = Event.where(:user_id => 1)
+    redirect_to :controller => "events", :action => "index", :user_id => luid, :user_name => login_user.user_name
+
   end
 
 end

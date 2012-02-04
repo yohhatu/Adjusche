@@ -1,18 +1,24 @@
-<h1>イベント一覧(仮)</h1>
+<h1>Adjusche</h1>
 
-<table border="1">
-<tr>
-  <td>イベント名</td>
-  <td>作成ユーザID</td>
-  <td>説明</td>
-</tr>
-<% @events.each do |event| %>
-<tr>
-  <td><%= link_to event.name, event %></td>
-  <td><%= event.user_id %></td>
-  <td><%= event.description %></td>
-</tr>
-<% end %>
-</table>
+<table width="600"><tr><td>
+<p>ようこそ、<%=@user_name %>さん!</p>
+<p align="right"><%= link_to "イベント新規作成はこちら", [ :new, :event ] %></p>
+
+	<table border="1">
+	<tr>
+	  <td width="120">イベント名</td>
+	  <td width="80">開催日</td>
+	  <td width="150">招待</td>
+	  <td width="250">詳細</td>
+	</tr>
+	<% @events.each do |event| %>
+	<tr>
+	  <td><%= link_to event.name, event %></td>
+	  <td></td>
+	  <td><%= link_to "友達を招待する" %></td>
+	  <td><%= event.description %></td>
+	</tr>
+	<% end %>
+	</table>
+</tr></td></table>
 <br>
-<%= link_to "新規登録", [ :new, :event ] %>
