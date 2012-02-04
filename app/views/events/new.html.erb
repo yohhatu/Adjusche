@@ -1,12 +1,23 @@
-<h1>イベント登録</h1>
+<h1>Adjusche</h1>
 
+<table width="500"><tr><td>
+<p>新しいイベントを作りましょう！</p>
+<p align="right"><%= link_to "キャンセル", :events %></p>
 <%= form_for @event do |form| %>
-	<ul>
-		<li><%= form.label :name, "イベント名" %><%= form.text_field :name %></li>
-		<li><%= form.label :description, "説明" %><%= form.text_area :description %></li>
-		<li><%= form.submit "送信" %></li>
-	</ul>
+	<table>
+	<tr>
+		<td><b><%= form.label :name, "イベント名" %></b></td><td><%= form.text_field :name %></td>
+	</tr><tr>
+		<td><b><%= form.label :description, "イベント詳細" %></b></td><td><%= form.text_area :description %></td>
+	</tr><tr>
+		<td></td><td align="right"><%= form.submit "イベント作成" %></td>
+	</tr>
+	</table>
 <% end %>
-<%= link_to "メニューへ戻る", :events %>
-<p>※TODO:作成ユーザIDのセット</p>
+</tr></td></table>
+<hr>
+<p>※TODO:<br>
+<li>作成ユーザIDのセット(非表示項目)
+<li>候補日の入力（cacooで決めてから）
+</p>
 
