@@ -1,0 +1,15 @@
+<table width="500"><tr><td>
+<p>イベントの編集・削除</p>
+<p align="right">
+	<%= link_to "削除", @event, :method => :delete,
+	:confirm => "本当に削除しますか？ " %>
+
+	<%= link_to "キャンセル", :events %>
+</p>
+<%= render "form" %>
+</tr></td></table>
+<hr>
+<p>※TODO:<br>
+<li>候補日の入力（新規作成と同様）
+</p>
+

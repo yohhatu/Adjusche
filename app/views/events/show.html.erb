@@ -1,4 +1,6 @@
 <h1>イベント詳細: <%= @event.name %></h1>
+<p><%= link_to "メニューへ", :events %></p>
+<p><%= link_to "編集", [ :edit, @event ] %></p>
 
 <table border="1">
 	<tr>
@@ -16,5 +18,3 @@
 </table>
 <br>
 <br>
-<p><%= link_to "メニューへ", :events %></p>
-<p><%= link_to "新規登録", [ :new, :event ] %></p>
