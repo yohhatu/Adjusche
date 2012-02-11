@@ -1,20 +1,28 @@
-<h1>イベント詳細: <%= @event.name %></h1>
-<p><%= link_to "メニューへ", :events %></p>
-<p><%= link_to "編集", [ :edit, @event ] %></p>
+<h2>イベント詳細: <%= @event.name %></h2>
+<p>&nbsp;<%= link_to "編集", [ :edit, @event ] %>&nbsp;&nbsp;<%= link_to "メニューへ", :events %></p>
 
-<table border="1">
+<table width="300" border="1">
 	<tr>
-		<td>イベント名</td>
-		<td><%= @event.name %></td>
+		<td width="100">イベント名</td>
+		<td width="200"><%= @event.name %></td>
 	</tr>
 	<tr>
 		<td>説明</td>
 		<td><%= @event.description %></td>
 	</tr>
 	<tr>
-		<td>作成ユーザID</td>
-		<td><%= @event.user_id %></td>
+		<td>作成ユーザ</td>
+		<td><%= @user_name %></td>
 	</tr>
+	<tr>
+		<td>作成日</td>
+		<td><%= @event.created_at %></td>
+	</tr>
+	<tr>
+		<td>最終更新日</td>
+		<td><%= @event.updated_at %></td>
+	</tr>
+
 </table>
 <br>
 <br>
