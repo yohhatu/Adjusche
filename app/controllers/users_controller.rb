@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       redirect_to :back
     end
     
-    session[:user_info] = params[:post][:name]
+    session[:user_info] = login_user
     #@events = Event.where(:user_id => User.find_by_user_name(session[:user_info] )[:id]) 
 
     @user_name = login_user.user_name
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @events = Event.where(:user_id => luid )
 
     #@events = Event.where(:user_id => 1)
-    redirect_to :controller => "events", :action => "index", :user_id => luid, :user_name => login_user.user_name
+    redirect_to :controller => "events", :action => "index"
 
   end
 
