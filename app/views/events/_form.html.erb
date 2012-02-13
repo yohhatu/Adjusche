@@ -1,0 +1,12 @@
+<%= form_for @event do |form| %>
+	<table>
+	<tr>
+		<td><b><%= form.label :name, "イベント名" %></b></td><td><%= form.text_field :name %></td>
+	</tr><tr>
+		<td><b><%= form.label :description, "イベント詳細" %></b></td><td><%= form.text_area :description %></td>
+	</tr><tr>
+		<td></td><td align="right"><%= form.submit "イベント登録" %></td>
+	</tr>
+	</table>
+<% end %>
+
