@@ -1,0 +1,14 @@
+<h1>ロ グ イ ン 画 面 </h1>
+
+<%= form_tag :action => :login do %>
+<fieldset>
+<ul>
+  <li><%= label_tag :name, "ユ ー ザ ー 名 " %>
+      <%= text_field_tag 'post[name]' %></li>
+  <li><%= label_tag :pass, "パ ス ワ ー ド " %>
+      <%= password_field_tag 'post[pass]' %></li>
+</ul>
+</br>
+<%= submit_tag "ロ グ イ ン " %>
+</fieldset>
+<% end %>
