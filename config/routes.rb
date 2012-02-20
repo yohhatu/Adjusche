@@ -1,9 +1,12 @@
 Adjusche::Application.routes.draw do
-  root :to => "users#new"
-  #resources :users 
+  root :to => "logins#index"
+   
   resources :users do 
-    get :login, :on => :member
     get :menu, :on => :member  
+  end
+
+  resources :logins do
+    post :login, :on => :collection
   end
 
   resources :events do
