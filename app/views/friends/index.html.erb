@@ -1,1 +1,14 @@
-<p><%= @event.name %>に友達を招待しましょう</p>
+<h2><%= @event.name %>に友達を招待しましょう</h2>
+<p align="right"><%= link_to "キャンセル" %></p>
+
+<%= form_tag :action => :search do%>
+<fieldset>
+  <table>
+    <tr>
+      <td width="120"><%= label_tag "お友達の名前" %></td>
+      <td width="120"><%= text_field_tag 'search_name' %></td>
+    </tr>
+  </table>
+  <%= submit_tag "seach" %>
+</fieldset>
+<% end %>
