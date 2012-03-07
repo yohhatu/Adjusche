@@ -1,14 +1,19 @@
-<h2><%= @event.name %>�ɗF�B�����҂��܂��傤</h2>
-<p align="right"><%= link_to "�L�����Z��" %></p>
+<h2><%= @event.name %>に友達を招待しましょう</h2>
+<p align="right"><%= link_to "キャンセル" %></p>
 
-<%= form_tag :action => :search do%>
+<%= form_tag ({:action => :search}, :method => :get, :remote => true) do%>
 <fieldset>
   <table>
     <tr>
-      <td width="120"><%= label_tag "���F�B�̖��O" %></td>
+      <td width="120"><%= label_tag "お友達の名前" %></td>
       <td width="120"><%= text_field_tag 'search_name' %></td>
     </tr>
   </table>
-  <%= submit_tag "seach" %>
+  <%= submit_tag "search" %>
 </fieldset>
 <% end %>
+
+
+<div id="friend">
+  <p><%= @users.user_name%></p>
+</div>
