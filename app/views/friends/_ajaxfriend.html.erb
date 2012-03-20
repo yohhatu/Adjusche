@@ -1,0 +1,8 @@
+<table> 
+  <% @friends.each do |f| %>
+    <tr>
+      <td><%= link_to (f.user_name, {:action => 'create',:id => f.id}, {:method => 'post'}) %></td>
+    </tr>
+  <% end %>
+</table>
+

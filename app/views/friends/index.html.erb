@@ -1,0 +1,20 @@
+<h2><%= @event.name %>に友達を招待しましょう</h2>
+<p align="right"><%= link_to "キャンセル" %></p>
+
+<%= form_tag ({:action => :search}, :method => :get, :remote => true) do%>
+<fieldset>
+  <table>
+    <tr>
+      <td width="120"><%= label_tag "お友達の名前" %></td>
+      <td width="120"><%= text_field_tag 'search_name' %></td>
+    </tr>
+  </table>
+  <%= submit_tag "search" %>
+</fieldset>
+<% end %>
+
+
+<div id="friend">
+<!-- <p><#%= @friends.user_name%></p>-->
+<p>ユーザー0件</p>
+</div>

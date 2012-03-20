@@ -1,0 +1,4 @@
+//$('#friend').html("<#%=j @friends.user_name %>");
+$('#friend').html("<%= escape_javascript(render :partial => 'ajaxfriend', :object => @friends)  %>");
+
+
