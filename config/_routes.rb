@@ -14,10 +14,8 @@ Adjusche::Application.routes.draw do
   end
 
   resources :friends do
-    get :search, :on => :collection
+    get :search => :collection
   end
-
-  resources :events_users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
