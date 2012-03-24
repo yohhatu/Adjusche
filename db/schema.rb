@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20120320031628) do
   create_table "event_users", :force => true do |t|
     t.integer  "event_id"
     t.integer  "user_id"
-    t.string  "condition"
+    t.string   "condition"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(:version => 20120320031628) do
     t.string   "name"
     t.text     "description"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events_users", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.boolean  "condition"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
