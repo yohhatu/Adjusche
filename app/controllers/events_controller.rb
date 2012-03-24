@@ -3,6 +3,9 @@
 class EventsController < ApplicationController
 	### メニュー画面
 	def index
+    #お知らせを表示するメソッドを呼び出し
+    bar_controller()
+
 		# ユーザID取得
 		login_user = session[:user_info]
 		luid = login_user.id
@@ -14,6 +17,7 @@ class EventsController < ApplicationController
 			# (dummy)全件取得
 			@events = Event.all
 		end
+
 	end
 
 	### 詳細画面
