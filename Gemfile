@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem 'json'
 
+gem "twitter-bootstrap-rails"
+
 group :development, :test do
   gem 'rspec-rails'
 end
