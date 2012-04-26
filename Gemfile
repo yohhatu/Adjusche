@@ -5,14 +5,24 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
 
+#20120411herokuデプロイstart
+group :production do
+    gem 'therubyracer-heroku', '0.8.1.pre3'
+    gem 'pg'
+end
+
+#gem 'activerecord-postgresql-adapter'
+#20120411herokuデプロイ end
+#
 gem 'json'
 
 gem "twitter-bootstrap-rails"
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'sqlite3-ruby',:require => 'sqlite3'
 end
 
 # Gems used only for assets and not required

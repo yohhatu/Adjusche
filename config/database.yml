@@ -23,3 +23,11 @@ production:
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
+
+production:
+  adapter: postgresql
+  username: user
+  password: pass
+  database: db/production.postgresql
+  host: http://adjusche.heroku.com/
+  encoding: utf8
