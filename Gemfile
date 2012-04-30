@@ -7,16 +7,11 @@ gem 'rails', '3.1.0'
 
 #gem 'sqlite3'
 
-#20120411herokuデプロイstart
-
 gem 'sqlite3', :group => [:development, :test]
 group :production do
     gem 'pg'
 end
 
-#gem 'activerecord-postgresql-adapter'
-#20120411herokuデプロイ end
-#
 gem 'json'
 
 gem "twitter-bootstrap-rails"
