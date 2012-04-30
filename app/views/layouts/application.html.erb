@@ -33,7 +33,7 @@
           <a class="brand" href="#">Adjusche</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-                <li><%= link_to "(Dummy)Link1", "/path1"  %></li>
+                <li><%= link_to @notify, "/path1"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -46,12 +46,11 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
-                <li><%= link_to "(Dummy)Link1", "/path1"  %></li>
+                <li><%= link_to "(Dummy)Link", "/path1"  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
-          <%= render "shared/header" %> 
           <%= yield %>
         </div>
       </div><!--/row-->
