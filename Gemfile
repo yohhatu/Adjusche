@@ -8,8 +8,9 @@ gem 'rails', '3.1.0'
 #gem 'sqlite3'
 
 #20120411herokuデプロイstart
+
+gem 'sqlite3', :group => [:development, :test]
 group :production do
-    gem 'therubyracer-heroku', '0.8.1.pre3'
     gem 'pg'
 end
 
@@ -22,7 +23,6 @@ gem "twitter-bootstrap-rails"
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'sqlite3-ruby',:require => 'sqlite3'
 end
 
 # Gems used only for assets and not required
