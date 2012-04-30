@@ -2,7 +2,7 @@
 <table width="600"><tr><td>
 <p>ようこそ、<%=@user_name %>さん</p>
 <p align="right"><%= link_to "イベント新規作成はこちら", [ :new, :event ] %></p>
-<p align="right"><%= link_to "ログイン画面へ", { :controller=> "users", :action=>"new" } %></p>
+<p align="right"><%= link_to "ログイン画面へ", { :controller=> "logins", :action=>"index" } %></p>
 
 	<table border="1">
 	<tr>
