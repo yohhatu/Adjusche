@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120325053658) do
+ActiveRecord::Schema.define(:version => 20120502142817) do
 
   create_table "event_candidate_dates", :force => true do |t|
     t.integer  "event_id"
     t.date     "candidate_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "confirmed_flag"
   end
 
   create_table "event_users", :force => true do |t|
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(:version => 20120325053658) do
     t.integer  "user_id"
     t.date     "candidate_date"
     t.string   "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notifications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "notify_kind"
+    t.boolean  "read_flag"
+    t.integer  "general_column1"
+    t.integer  "general_column2"
+    t.integer  "general_column3"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
