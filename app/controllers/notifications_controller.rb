@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 class NotificationsController < ApplicationController
   def index 
     @user = session[:user_info].user_name
