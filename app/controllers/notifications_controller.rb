@@ -3,9 +3,6 @@ class NotificationsController < ApplicationController
     @user = session[:user_info].user_name
     @notifications = Notification.where(:user_id => 1 , :read_flag => false)
 
-    #str = Message.plain("MSG_NOTIFY_INVITATION",["hoge","piyo"])
-    #@message = str
-
     @notifications.each do |notify|
       if notify.read_flag == false then
         #通知のカインドをキーに、メッセージをセレクトする
