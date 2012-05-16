@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 class Message
 
   #通知メッセージ
