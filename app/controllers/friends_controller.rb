@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 class FriendsController < ApplicationController
   $event_id
   def index

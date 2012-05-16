@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 class LoginsController < ApplicationController
   def index
     render :layout => false
