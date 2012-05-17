@@ -2,13 +2,15 @@
 names = [
   "seit",
   "yohhatu",
-  "f012"
+  "f012",
+  "test"
 ]
 
 passes = [
   "seit",
   "yohhatu",
-  "f012"
+  "f012",
+  "test"
 ]
 
 event_names = [
@@ -65,7 +67,7 @@ general_column2s = [
  5
 ]
 
-3.times do |u|
+4.times do |u|
   User.create(:user_name => names[u], :user_pass => passes[u])
 end
 
