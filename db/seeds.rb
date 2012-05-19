@@ -78,7 +78,7 @@ end
 end
 
 5.times do |n|
-  Notification.create(:user_id => event_user_ids[n], :notify_kind => notify_kinds[n], :read_flag => read_flags[n], :general_column1 => general_column1s[n], :general_column2 => general_column2s[n])
+  Notification.create(:user_id => event_user_ids[n], :notify_kind => notify_kinds[n], :read_flag => read_flags[n], :general_column1 => general_column1s[n], :general_column2 => general_column2s[n], :notify_date => "20120519")
 end
 
 # This file should contain all the record creation needed to seed the database with its default values.
