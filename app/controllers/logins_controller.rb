@@ -14,13 +14,11 @@ class LoginsController < ApplicationController
 
       luid = login_user.id
       @events = Event.where(:user_id => luid )
-
       redirect_to :controller => "events", :action => "index"
  
     rescue ActiveRecord::RecordNotFound
       #redirect_to :controller => "logins", :action => "index"
       redirect_to :back
     end
-
   end
 end
