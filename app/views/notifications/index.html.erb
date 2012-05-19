@@ -4,7 +4,12 @@
   <tr>
     <td width = "40">No</td>
     <td width = "200">内容</td>
-
   </tr>
+  <%= i = 1 %>
+  <%= @msgAry.each do |msg|%>
+    <td><%= i.to_s %></td>
+    <td><%= msg %></td>
+    <%=i = i + 1 %>
+  <% end %>
   <%= @message %>
 

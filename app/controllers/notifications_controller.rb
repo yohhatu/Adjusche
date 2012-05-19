@@ -4,13 +4,16 @@ class NotificationsController < ApplicationController
     @user = session[:user_info].user_name
     @notifications = Notification.where(:user_id => 1 , :read_flag => false)
 
+    @msgAry = Array.new()
     @notifications.each do |notify|
       if notify.read_flag == false then
         #通知のカインドをキーに、メッセージをセレクトする
         case notify.notify_kind
         when "2" then
-          str = Message.plain("MSG_NOTIFY_INVITATION", ["hoge","piyo"])
-          @message = str
+          @strUsrNm = User.find(notify.general_column1)
+          @strEvtNm = Event.find(notify.general_column2)
+          str = Message.plain("MSG_NOTIFY_INVITATION", [@strUsrNm.user_name,@strEvtNm.name])
+          @msgAry.push str
         else
         end
       end
