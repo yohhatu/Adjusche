@@ -4,11 +4,13 @@
   <tr>
     <td width = "40">No</td>
     <td width = "200">内容</td>
+    <td width = "50">日付</td>
   </tr>
   <%= i = 1 %>
   <%= @msgAry.each do |msg|%>
     <td><%= i.to_s %></td>
-    <td><%= msg %></td>
+    <td><%= msg['msg'] %></td>
+    <td><%= msg['date'] %></td>
     <%=i = i + 1 %>
   <% end %>
   <%= @message %>
