@@ -14,7 +14,7 @@ class NotificationsController < ApplicationController
           @strUsrNm = User.find(@user.id)
           @strEvtNm = Event.find(notify.general_column2)
           h.store('msg', Message.plain("MSG_NOTIFY_INVITATION", [@strUsrNm.user_name,@strEvtNm.name]))
-          h.store('date', notify.notify_date)
+          h.store('date', Date.strptime(notify.notify_date, "%Y%m%d"))
           @msgAry.push h
         else
         end
