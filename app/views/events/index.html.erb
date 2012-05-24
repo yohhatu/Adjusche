@@ -16,7 +16,7 @@
 	  <td><%= link_to event.name, event %></td>
 	  <td></td>
     <td><%= link_to "友達を招待する", {:controller=>"friends", :action=>"index", :id=>event.id} %></td>
-	  <td><%= event.description %></td>
+	  <td><%= html_safe_br event.description %></td>
 	</tr>
 	<% end %>
 	</table>
