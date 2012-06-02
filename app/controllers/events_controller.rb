@@ -11,7 +11,7 @@ class EventsController < ApplicationController
 		luid = login_user.id
 		@user_name = login_user.user_name
 		if (luid != nil) then
-			# ユーザIDを元に取得
+			# ユーザIDを元にイベントを取得
 			@events = Event.where(:user_id => luid )
 		else
 			# (dummy)全件取得
