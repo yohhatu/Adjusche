@@ -41,12 +41,10 @@ class EventsController < ApplicationController
 		# 作成ユーザIDを設定
 		(params[:event])["user_id"] = luid
     # 登録用のハッシュに格納して登録
-    strName = (params[:event])["name"]
-    strDescription = (params[:event])["description"]
-    strUserId = (params[:event])["user_id"]
     strCandidateDate = (params[:event_candidate_date])["candidate_date"]
+    aryCandidateDate = strCandidateDate.split("\n") 
+    #(params[:event])["description"] = aryCandidateDate.shift
 		# DBにeventをinsert
-		#@event = Event.create(:name => strName, :description => strDescription, :user_id => strUserId)
     @event = Event.create(params[:event])
 		# イベント詳細画面に遷移
 		redirect_to @event
