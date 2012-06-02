@@ -6,10 +6,12 @@
   <tr>
 		<td><b><%= form.label :description, "イベント詳細" %></b></td><td><%= form.text_area :description %></td>
   </tr>
-<% if false %>
-  <tr>
-    <td><b><%= form.label :candidate, "候補日入力" %></b></td><td><%= form.text_area :candidate %></td>
-  </tr>
+<% if true %>
+    <%= fields_for :event_candidate_date do |cd| %>
+      <tr>
+        <td><b><%= cd.label :candidate_date, "候補日入力" %></b></td><td><%= cd.text_area :candidate_date, :value => @candidate_date %></td>
+      </tr>
+    <% end %>
 <% end %>
   <tr>
 		<td></td><td align="right"><%= form.submit "イベント登録" %></td>

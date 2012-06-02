@@ -30,7 +30,8 @@ class EventsController < ApplicationController
 
 	### 新規作成画面
 	def new
-		@event = Event.new
+	  @event = Event.new
+    @candidate_date = "例)8/6(金)"
 	end
 
 	def create
@@ -39,9 +40,14 @@ class EventsController < ApplicationController
 		luid = login_user.id
 		# 作成ユーザIDを設定
 		(params[:event])["user_id"] = luid
-		# DBにinsert
-		@event = Event.create(params[:event])
-
+    # 登録用のハッシュに格納して登録
+    strName = (params[:event])["name"]
+    strDescription = (params[:event])["description"]
+    strUserId = (params[:event])["user_id"]
+    strCandidateDate = (params[:event_candidate_date])["candidate_date"]
+		# DBにeventをinsert
+		#@event = Event.create(:name => strName, :description => strDescription, :user_id => strUserId)
+    @event = Event.create(params[:event])
 		# イベント詳細画面に遷移
 		redirect_to @event
 	end
@@ -49,6 +55,7 @@ class EventsController < ApplicationController
 	### 編集画面
 	def edit
 		@event = Event.find(params[:id])
+    @candidate_date = "test"
 	end
 
 	def update
