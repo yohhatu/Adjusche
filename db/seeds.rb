@@ -32,11 +32,11 @@ event_user_ids = [
 ]
 
 notify_user_id = [
-  1,
-  1,
-  1,
-  1,
-  1
+  4,
+  4,
+  4,
+  4,
+  4
 ]
 
 notify_kinds = [
