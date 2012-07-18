@@ -38,7 +38,6 @@ class EventsController < ApplicationController
 		# ログインユーザIDを取得
 		login_user = session[:user_info]
 		luid = login_user.id
-		# 作成ユーザIDを設定
 		(params[:event])["user_id"] = luid
     # 登録用のハッシュに格納して登録
     strCandidateDate = (params[:event_candidate_date])["candidate_date"]
@@ -47,12 +46,10 @@ class EventsController < ApplicationController
     # 改行区切りで配列に変換
     aryCandidateDate = strCandidateDate.split("\n") 
     aryCandidateDate.each{|date| 
-      # 配列から一つずつdateを取り出して登録
       @event_candidate_date = EventCandidateDate.create(:event_id => @event.id,:candidate_date => date, :confirmed_flag => false)
     }
     #(params[:event])["description"] = aryCandidateDate.shift
 		# DBにeventをinsert
-		# イベント詳細画面に遷移
 		redirect_to @event
 	end
 

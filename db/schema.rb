@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(:version => 20120519142229) do
 
   create_table "event_candidate_dates", :force => true do |t|
     t.integer  "event_id"
-    t.date     "candidate_date"
+    t.string   "candidate_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "confirmed_flag"
