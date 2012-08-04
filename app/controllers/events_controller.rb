@@ -35,28 +35,31 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		# ログインユーザIDを取得
 		login_user = session[:user_info]
-		luid = login_user.id
-		(params[:event])["user_id"] = luid
-    # 登録用のハッシュに格納して登録
-    strCandidateDate = (params[:event_candidate_date])["candidate_date"]
-    @event = Event.create(params[:event])
+		login_user_id = login_user.id
+		(params[:event])["user_id"] = login_user_id
+
+    # event_create関数内で登録処理。モデルにて記述。
+    str_candidate_date = (params[:event_candidate_date])["candidate_date"]
+    @event = Event.event_create(params[:event], str_candidate_date)
+
     # この辺でサニタイジングする必要あるけどとりあえずなし
-    # 改行区切りで配列に変換
-    aryCandidateDate = strCandidateDate.split("\n") 
-    aryCandidateDate.each{|date| 
-      @event_candidate_date = EventCandidateDate.create(:event_id => @event.id,:candidate_date => date, :confirmed_flag => false)
-    }
-    #(params[:event])["description"] = aryCandidateDate.shift
-		# DBにeventをinsert
+
 		redirect_to @event
 	end
 
 	### 編集画面
 	def edit
-		@event = Event.find(params[:id])
-    @candidate_date = "test"
+    edit_event_id = params[:id]
+		@event = Event.find(edit_event_id)
+
+    @event_candidate_dates = EventCandidateDate.where(:event_id => edit_event_id)
+    str_candidate_date = "" # イベント候補日を改行でつなげた文字列
+    @event_candidate_dates.each{|event_candidate_date|
+      str_candidate_date << event_candidate_date.candidate_date + "\r\n"
+      logger.debug("seit event_candedate_date#{event_candidate_date.candidate_date}")
+    }
+    @candidate_date = str_candidate_date
 	end
 
 	def update
